@@ -55,6 +55,8 @@
 
     </div>
 
+    <script src="js/datalist.js"></script>
+    <script src="js/temperatures.js"></script>
     <script>  
 		  var form = document.getElementById("form-search");
 		  var map;
@@ -122,18 +124,20 @@
            getTemperature(item.value);
       };
 
-      $btnAction.addEventListener("click", function( event ) {
-        CitySelected($cityInput.value);
-      }, true);
+      $btnAction.addEventListener("click", function(event) {
+        event.preventDefault();
+        // TODO: Remove form and this can work, else triggers two calls
+        //CitySelected($cityInput.value);
+      });
 
-      $cityInput.addEventListener("keyup", function (event) {
+      $cityInput.addEventListener("keyup", function(event) {
           if (event.keyCode == 13) {
               event.preventDefault();
               if (this.value.length != 0) {
                   CitySelected($cityInput.value);
               }
           }
-      }, false);
+      });
 
 
 	    function initMap() {
@@ -147,8 +151,6 @@
 	    	initMap();
 	    });
     </script>
-    <script src="js/datalist.js"></script>
-    <script src="js/temperatures.js"></script>
 
   </body>
 
