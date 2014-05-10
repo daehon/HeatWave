@@ -1,5 +1,6 @@
 // Get the <datalist> and <input> elements.
 var dataList = document.getElementById('cities-datalist');
+var cities = {};
 
 // Create a new XMLHttpRequest.
 var request = new XMLHttpRequest();
@@ -11,13 +12,19 @@ request.onreadystatechange = function(response) {
       // Parse the JSON
       var jsonOptions = JSON.parse(request.responseText);
 
-      cities = jsonOptions['rows']
+      items = jsonOptions['rows']
       // Loop over the JSON array.
-      cities.forEach(function(item) {
+      items.forEach(function(item) {
         // Create a new <option> element.
         var option = document.createElement('option');
         // Set the value using the item in the JSON array.
         option.value = item['name1'];
+        // Create Hash with the data for the city
+        cities[item['name1']] = {
+          internalname: item['internalname'],
+          lat: item['lat'],
+          lon: item['lon']
+        };
         // Add the <option> element to the <datalist>.
         dataList.appendChild(option);
       });
