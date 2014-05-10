@@ -452,6 +452,12 @@ body {
 	font-weight: normal;
 	color: #666;
 }
+
+.extreme-danger {
+  background: #A81D00;
+}
+
+
 .danger {
   background: #ff2e00;
 }
