@@ -23,7 +23,8 @@ request.onreadystatechange = function(response) {
         cities[item['name1']] = {
           internalname: item['internalname'],
           lat: item['lat'],
-          lon: item['lon']
+          lon: item['lon'],
+          population: item['population']
         };
         // Add the <option> element to the <datalist>.
         dataList.appendChild(option);
