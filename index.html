@@ -176,6 +176,17 @@
           } else {
             removeClass (document.querySelector('#light-search'), 'bounceInDown');
           }
+
+          if ( !hasClass(document.querySelector('#position'), 'active') ) { 
+           addClass (document.querySelector('#position'), 'active'); 
+          } else {
+            removeClass (document.querySelector('#position'), 'active');
+          }
+
+          if ( hasClass(document.querySelector('#faq'), 'active') ) { 
+           removeClass (document.querySelector('#faq'), 'active'); 
+          } 
+
           if ( hasClass(document.querySelector('#inn-faq'), 'bounceInRight') ) { 
            removeClass (document.querySelector('#inn-faq'), 'bounceInRight');
           }
@@ -200,6 +211,17 @@
           } else {
            removeClass (document.querySelector('#inn-faq'), 'bounceInRight');
           }
+
+          if ( !hasClass(document.querySelector('#faq'), 'active') ) { 
+           addClass (document.querySelector('#faq'), 'active'); 
+          } else {
+            removeClass (document.querySelector('#faq'), 'active');
+          }
+
+
+          if ( hasClass(document.querySelector('#position'), 'active') ) { 
+           removeClass (document.querySelector('#position'), 'active'); 
+          } 
 
           if ( hasClass(document.querySelector('#light-search'), 'bounceInDown') ) { 
            removeClass (document.querySelector('#light-search'), 'bounceInDown');
