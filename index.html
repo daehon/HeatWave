@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Heatwave</title>
+		<link href="css/heatweb.css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+
+		<nav class="navigation">
+			<h1 class="brand"><a href="#">HeatWave</a></h1>
+			<ul class="nav">
+				<li class="h-pr tooltip-inner">
+					<div class="tooltip h-pa">
+						<p>Do you want choose any city?</p>
+					</div>
+					<div class="btn">
+						<a href="#" class="btn-large location" id="position">Position</a>
+					</div>
+				</li>
+				<li class="h-pr tooltip-inner">
+					<div class="tooltip h-pa">
+						<p>Do you want know the most importants advices?</p>
+					</div>
+					<div class="btn">
+						<a href="#" class="btn-large faq">FAQs</a>
+					</div>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="map h-pa"></div>
+
+
+		<div class="light light-search h-pa animated" id="light-search">
+			<h2 class="lgt-title h-tcenter">Choose a city</h2>
+			<form class="frm-search" id="form-search">
+				<input id="form-txt" type="text" value="City" class="frm-search-txt h-iblock" />
+				<button class="btn" id="btn-action">
+					<span class="btn-large search">hola</span>
+				</button>
+			</form>
+		</div>
+
+		<script>	
+
+		 	function addClass(node, classAdd){
+		      node.className += ' ' + classAdd;
+		    } 
+
+
+		    function removeClass(node, classRemove){
+		      node.className = node.className.replace(classRemove,"");
+		    }
+
+
+		  var form = document.getElementById("form-search");
+		  form.addEventListener("focus", function( event ) {
+		    document.querySelector("#btn-action").style.opacity="1";    
+		    document.querySelector("#form-txt").value="";    
+		  }, true);
+		  form.addEventListener("blur", function( event ) {
+		    document.querySelector("#btn-action").style.opacity=".2";
+		    document.querySelector("#form-txt").value="City";    
+		  }, true);
+
+
+		  document.querySelector('#position').addEventListener("click", function( event ) {
+		  	addClass(document.querySelector('#light-search'), 'bounceInDown');
+		  }, true);
+
+		</script>
+
+
+	</body>
+
+</html>
