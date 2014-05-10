@@ -16,8 +16,7 @@ function getColor(temperature) {
     default:
       color = "extreme-danger";
   };
-  console.log(color);
-
+  return color;
 };
 
 function getTemperature(id, cityId) {
