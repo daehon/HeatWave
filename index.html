@@ -35,7 +35,7 @@
     <div id="cartodb-map" class="map h-pa"></div>
 
     <div class="light light-search h-pa animated" id="light-search">
-      <p class="h-pa btn btn-close"><a href="#" class="close" id="close-lgt-search">cerrar</a></p>
+      <p class="h-pa btn btn-close" id="close-light-search"><a href="#" class="close" id="close-lgt-search">cerrar</a></p>
       <h2 class="lgt-title h-tcenter">Choose a city</h2>
       <form class="frm-search" id="form-search">
         <input id="form-txt" type="text" value="City" class="frm-search-txt h-iblock" />
@@ -70,6 +70,10 @@
 		  	addClass(document.querySelector('#light-search'), 'bounceInDown');
 		  }, true);
 		
+      document.querySelector('#close-light-search').addEventListener("click", function( event ) {
+        removeClass(document.querySelector('#light-search'), 'bounceInDown');
+      }, true);
+
 	    function initMap() {
 	    	var layerUrl = 'http://jorgepazj.cartodb.com/api/v2/viz/cb63142a-d843-11e3-b500-0e10bcd91c2b/viz.json';
 	      map = new L.Map('cartodb-map', { center: [0,0], zoom: 2 });
