@@ -93,7 +93,7 @@
 
 
     <div class="inner-info animated" id="inn-info">
-      <p class="h-pa btn btn-close" id="close-info-search" style="right: 20px;"><a href="#" class="close" id="close-lgt-search">cerrar</a></p>
+      <p class="h-pa btn btn-close" id="close-info-search" style="right: 20px;"><a href="#" class="close" id="close-lgt-info">cerrar</a></p>
     </div>
 
     <script src="js/datalist.js"></script>
@@ -148,6 +148,12 @@
       document.querySelector('#close-light-search').addEventListener("click", function( event ) {
         removeClass(document.querySelector('#light-search'), 'bounceInDown');
       }, true);
+
+      document.querySelector('#close-lgt-info').addEventListener("click", function(event) {
+        event.preventDefault();
+        removeClass(document.querySelector('#inn-info'), 'bounceInUp');
+        // TODO: Reset map
+      });
 
       document.querySelector('#faq').addEventListener("click", function( event ) {
           if ( !hasClass(document.querySelector('#inn-faq'), 'bounceInRight') ) { 
