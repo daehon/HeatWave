@@ -23,7 +23,8 @@ request.onreadystatechange = function(response) {
         cities[item['name1']] = {
           internalname: item['internalname'],
           lat: item['lat'],
-          lon: item['lon']
+          lon: item['lon'],
+          population: item['population']
         };
         // Add the <option> element to the <datalist>.
         dataList.appendChild(option);
@@ -38,6 +39,6 @@ request.onreadystatechange = function(response) {
 
 
 // Set up and make the request.
-request.open('GET', 'http://jorgepazj.cartodb.com/api/v2/sql?api_key=5623ba4d3f266753437e57701ffd8b0759f49410&q=SELECT%20name1,name2,internalname,population,lat,lon%20FROM%20heatwave_cities', true);
+request.open('GET', 'http://jorgepazj.cartodb.com/api/v2/sql?q=SELECT%20name1,name2,internalname,population,lat,lon%20FROM%20heatwave_cities', true);
 request.send();
 
