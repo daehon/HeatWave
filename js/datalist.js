@@ -21,11 +21,11 @@ request.onreadystatechange = function(response) {
         // Add the <option> element to the <datalist>.
         dataList.appendChild(option);
       });
-
     } else {
       // An error occured :(
       console.log("Didn't load the JSON with the cities!");
     }
+    request = null;
   }
 };
 

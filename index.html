@@ -96,6 +96,7 @@
            removeClass (document.querySelector('#inn-faq'), 'bounceInRight');
           }
 
+          setTimeout(function(){$cityInput.focus();}, 1250);
 		  }, true);
 		
       document.querySelector('#close-light-search').addEventListener("click", function( event ) {
@@ -110,15 +111,15 @@
           if ( hasClass(document.querySelector('#light-search'), 'bounceInDown') ) { 
            removeClass (document.querySelector('#light-search'), 'bounceInDown');
           }
+
       }, true);
 
       function CitySelected(id) {
            removeClass (document.querySelector('#light-search'), 'bounceInDown');
            addClass (document.querySelector('#inn-info'), 'bounceInUp');
 
-           var item =  dataList.querySelectorAll("option[value=" + id + "]")[0].id;
-           console.log(id);
-           // TODO: Hook here the data of the city
+           var item =  dataList.querySelectorAll("option[value=" + id + "]")[0];
+           getTemperature(item.value);
       };
 
       $btnAction.addEventListener("click", function( event ) {
@@ -155,6 +156,7 @@
 	    });
     </script>
     <script src="js/datalist.js"></script>
+    <script src="js/temperatures.js"></script>
 
   </body>
 
