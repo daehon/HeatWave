@@ -58,6 +58,8 @@
     <script>  
 		  var form = document.getElementById("form-search");
 		  var map;
+      var $btnAction = document.querySelector('#btn-action');
+      var $cityInput = document.querySelector('#form-txt');
 
 		 	function addClass(node, classAdd){
 		      node.className += ' ' + classAdd;
@@ -110,21 +112,24 @@
           }
       }, true);
 
-      var $btnAction = document.querySelector('#btn-action');
+      function CitySelected(id) {
+           removeClass (document.querySelector('#light-search'), 'bounceInDown');
+           addClass (document.querySelector('#inn-info'), 'bounceInUp');
+
+           var item =  dataList.querySelectorAll("option[value=" + id + "]")[0].id;
+           console.log(id);
+           // TODO: Hook here the data of the city
+      };
 
       $btnAction.addEventListener("click", function( event ) {
-           removeClass (document.querySelector('#light-search'), 'bounceInDown');
-
-           // saca la capa inferior
-           addClass (document.querySelector('#inn-info'), 'bounceInUp');
+        CitySelected($cityInput.value);
       }, true);
 
-
-      document.querySelector('#form-txt').addEventListener("keyup", function (event) {
+      $cityInput.addEventListener("keyup", function (event) {
           if (event.keyCode == 13) {
               event.preventDefault();
               if (this.value.length != 0) {
-                  $btnAction.click();
+                  CitySelected($cityInput.value);
               }
           }
       }, false);
