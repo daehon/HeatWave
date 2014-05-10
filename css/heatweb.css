@@ -419,15 +419,18 @@ body {
 .bounceInUp {
   -webkit-animation-name: bounceInUp;
   animation-name: bounceInUp;
+  pointer-events: auto;
 }
 
 
 .bounceInDown {
   -webkit-animation-name: bounceInDown;
   animation-name: bounceInDown;
+  pointer-events: auto;
 }
 .bounceInRight {
   -webkit-animation-name: bounceInRight;
   animation-name: bounceInRight;
+  pointer-events: auto;
 }
 
