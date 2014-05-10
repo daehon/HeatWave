@@ -236,6 +236,7 @@ body {
 	.navigation li {
 		padding: 32px 0;
 		border-bottom: 1px solid rgba(255, 255, 255, .1);
+		cursor: pointer;
 	}
 	.navigation li.active { background: rgba(0, 0, 0, .10);}
 	.navigation li a {
@@ -246,7 +247,7 @@ body {
 	 -webkit-transition:opacity .3s;
 	    transition:opacity .3s;
 	}
-	.nav a:hover { opacity: .8} 
+	.nav li:hover a { opacity: .8;} 
 
 .brand { text-indent: -9000px;  padding: 32px; background:#394047;  }
 	.brand a {
