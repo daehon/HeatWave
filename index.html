@@ -110,17 +110,24 @@
           }
       }, true);
 
-      document.querySelector('#btn-action').addEventListener("click", function( event ) {
-           removeClass (document.querySelector('#light-search'), 'bounceInDown');
+      var $btnAction = document.querySelector('#btn-action');
 
+      $btnAction.addEventListener("click", function( event ) {
+           removeClass (document.querySelector('#light-search'), 'bounceInDown');
 
            // saca la capa inferior
            addClass (document.querySelector('#inn-info'), 'bounceInUp');
-
-
-
       }, true);
 
+
+      document.querySelector('#form-txt').addEventListener("keyup", function (event) {
+          if (event.keyCode == 13) {
+              event.preventDefault();
+              if (this.value.length != 0) {
+                  $btnAction.click();
+              }
+          }
+      }, false);
 
 
 	    function initMap() {
