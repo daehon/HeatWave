@@ -1,5 +1,5 @@
 
-function getTemperature(id) {
+function getTemperature(id, cityId) {
   var temperatureRequest = new XMLHttpRequest();
 
   temperatureRequest.onreadystatechange = function(response) {
@@ -12,8 +12,7 @@ function getTemperature(id) {
         items.forEach(function(temp) {
           temperatures += temp['temperature'];
         });
-        console.log(temperatures);
-        //TODO
+        SetTemperatureData(temperatures, cityId);
       } else {
         // An error occured :(
         console.log("ERROR retrieving temperature for " + id);

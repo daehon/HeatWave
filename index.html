@@ -216,13 +216,15 @@
 
            var city = cities[id]['internalname'];
            window.viz.map.setCenter({lat: cities[id]['lat'], lon: cities[id]['lon']});
-           //TODO
-           temperatures = getTemperature(city);
+           getTemperature(city, id);
+      };
+
+      function SetTemperatureData(temperatures, id) {
            console.log("Temperatures: " + temperatures);
            population = cities[id]['population'];
            console.log("Population: " + population);
            addClass (document.querySelector('#inn-info'), 'bounceInUp');
-      };
+      }
 
       $btnAction.addEventListener("click", function(event) {
         event.preventDefault();
