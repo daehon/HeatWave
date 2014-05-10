@@ -164,8 +164,8 @@
            removeClass (document.querySelector('#light-search'), 'bounceInDown');
            addClass (document.querySelector('#inn-info'), 'bounceInUp');
 
-           var item =  dataList.querySelectorAll("option[value=" + id + "]")[0];
-           getTemperature(item.value);
+           var city = cities[id]['internalname'];
+           getTemperature(city);
       };
 
       $btnAction.addEventListener("click", function( event ) {
