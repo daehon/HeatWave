@@ -170,9 +170,10 @@ body {
 		right: -14px;
 		top: -21px;
 		z-index: 10;
-		background: #394047;
+		background: #fff;
 		border-radius: 50px;
 		padding: 8px;
+		border: 2px solid rgba(0, 0, 0, .2);
 	}
 	.close {
 		background: url(../img/icon-close.png) no-repeat;
@@ -183,9 +184,7 @@ body {
 	    transition:opacity .3s;
 		opacity: .3
 	}
-	.close:hover {
-		opacity: .8;
-	}
+
 .tooltip {
 	z-index: 10;
 	font: bold 12px Arial, Helvetica;
