@@ -229,7 +229,7 @@ body {
 	left: 0;
 	top: 0;
 	bottom: 0;
-	z-index: 2;
+	z-index: 20;
 	box-shadow: 8px 0 30px rgba(0, 0, 0, .2);
 }
 	.navigation ul { border-top: 1px solid rgba(255, 255, 255, .1); }
@@ -237,7 +237,7 @@ body {
 		padding: 32px 0;
 		border-bottom: 1px solid rgba(255, 255, 255, .1);
 	}
-
+	.navigation li.active { background: rgba(0, 0, 0, .10);}
 	.navigation li a {
 		margin: 0 auto;
 	}
@@ -391,7 +391,7 @@ body {
 		padding: 24px;
 		box-shadow: -10px 0 30px rgba(0, 0, 0, .2);
 		opacity: 0;
-		z-index: 10;
+		z-index: 8;
 		pointer-events: none;
 	}
 
@@ -399,23 +399,52 @@ body {
 	padding: 32px;
 }
 .inner-faqs ul {
-	height: 300px;
+	height: 100%;
 	overflow: auto;
 }
 .inner-faqs li {
 	font-family: 'Arial';
-	margin-bottom: 20px;
-	padding-bottom: 20px;
+	margin-bottom: 32px;
+	padding-bottom: 32px;
 	border-bottom: 1px dotted #ccc;
 
 }
 .inner-faqs li h2 {
-	font-size: 14px;
+	font-size: 28px;
+	margin-bottom: 8px;
 }
 .inner-faqs li p {
-	font-size: 12px;
-	color:#888;
+	font-size: 16px;
+	color:#999;
 }
+
+
+.lst-temperatures > li {
+	color: #fff;
+	font: 20px 'Arial' ;
+	background: #f5f5f5;
+	border-radius: 50%;
+}
+
+
+
+.danger {
+  background: #ff2e00;
+}
+
+.extreme-caution {
+  background: #ffa615;
+}
+
+.caution {
+  background: #ffdd56;
+}
+
+.nothing {
+  background: #a4bd0a;
+}
+
+
 
 .bounceInUp {
   -webkit-animation-name: bounceInUp;
