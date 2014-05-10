@@ -46,6 +46,15 @@
       </form>
     </div>
 
+    <div class="inner-faqs animated" id="inn-faq">
+      hola
+    </div>
+
+
+    <div class="inner-info animated" id="inn-info">
+
+    </div>
+
     <script>  
 		  var form = document.getElementById("form-search");
 		  var map;
@@ -78,7 +87,13 @@
 		  }, true);
 
 		  document.querySelector('#position').addEventListener("click", function( event ) {
-		  	addClass(document.querySelector('#light-search'), 'bounceInDown');
+          if ( !hasClass(document.querySelector('#light-search'), 'bounceInDown') ) { 
+           addClass (document.querySelector('#light-search'), 'bounceInDown');
+          }
+          if ( hasClass(document.querySelector('#inn-faq'), 'bounceInRight') ) { 
+           removeClass (document.querySelector('#inn-faq'), 'bounceInRight');
+          }
+
 		  }, true);
 		
       document.querySelector('#close-light-search').addEventListener("click", function( event ) {
@@ -86,13 +101,25 @@
       }, true);
 
       document.querySelector('#faq').addEventListener("click", function( event ) {
-          console.log("hola");
+          if ( !hasClass(document.querySelector('#inn-faq'), 'bounceInRight') ) { 
+           addClass (document.querySelector('#inn-faq'), 'bounceInRight');
+          }
+
           if ( hasClass(document.querySelector('#light-search'), 'bounceInDown') ) { 
            removeClass (document.querySelector('#light-search'), 'bounceInDown');
           }
-
       }, true);
 
+      document.querySelector('#btn-action').addEventListener("click", function( event ) {
+           removeClass (document.querySelector('#light-search'), 'bounceInDown');
+
+
+           // saca la capa inferior
+           addClass (document.querySelector('#inn-info'), 'bounceInUp');
+
+
+
+      }, true);
 
 
 
