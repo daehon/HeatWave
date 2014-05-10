@@ -10,7 +10,7 @@ function getTemperature(id, cityId) {
         items = jsonOptions['rows'];
         temperatures = Array();
         items.forEach(function(temp) {
-          temperatures += temp['temperature'];
+          temperatures.push(temp['temperature']);
         });
         SetTemperatureData(temperatures, cityId);
       } else {

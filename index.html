@@ -94,7 +94,7 @@
 
     <div class="inner-info animated h-tcenter" id="inn-info">
       <p class="h-pa btn btn-close" id="close-info-search" style="right: 20px;"><a href="#" class="close" id="close-lgt-info">cerrar</a></p>
-      <h1 class="h-tcenter">Madrid <small>(Population: 1.000.000.000)</small></h1>
+      <h1 class="h-tcenter"><span id="city-name">Madrid</span> <small>(Population: <span id="city-population">1.000.000.000</span>)</small></h1>
       <ul class="inb-list h-iblock h-malign lst-temperatures">
         <li class="h-valign" id="value01">
           <p class="h-iblock">
@@ -216,9 +216,17 @@
       };
 
       function SetTemperatureData(temperatures, id) {
-           console.log("Temperatures: " + temperatures);
-           population = cities[id]['population'];
-           console.log("Population: " + population);
+        document.querySelector('#city-name').innerHTML = cities[id]['internalname'];
+        document.querySelector('#city-population').innerHTML = cities[id]['population'];
+
+        document.querySelector("#value01").children[0].innerHTML = temperatures[0];
+        document.querySelector("#value02").children[0].innerHTML = temperatures[1];
+        document.querySelector("#value03").children[0].innerHTML = temperatures[2];
+        document.querySelector("#value04").children[0].innerHTML = temperatures[3];
+        document.querySelector("#value05").children[0].innerHTML = temperatures[4];
+        document.querySelector("#value06").children[0].innerHTML = temperatures[5];
+        document.querySelector("#value07").children[0].innerHTML = temperatures[6];
+
            addClass (document.querySelector('#inn-info'), 'bounceInUp');
       }
 
