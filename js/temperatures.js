@@ -1,3 +1,24 @@
+function getColor(temperature) {
+  var color = '';
+  switch (true) {
+    case temperature < 27:
+      color = "nothing";
+      break;
+    case temperature < 32:
+      color = "caution";
+      break;
+    case temperature < 41:
+      color = "extreme-caution";
+      break;
+    case temperature < 54:
+      color = "danger";
+      break;
+    default:
+      color = "extreme-danger";
+  };
+  console.log(color);
+
+};
 
 function getTemperature(id, cityId) {
   var temperatureRequest = new XMLHttpRequest();
