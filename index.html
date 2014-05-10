@@ -165,6 +165,7 @@
            addClass (document.querySelector('#inn-info'), 'bounceInUp');
 
            var city = cities[id]['internalname'];
+           window.viz.map.setCenter({lat: cities[city]['lat'], lon: cities[city]['lon']});
            getTemperature(city);
       };
 
