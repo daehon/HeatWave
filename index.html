@@ -137,17 +137,9 @@
 
 
 	    function initMap() {
-	    	var layerUrl = 'http://jorgepazj.cartodb.com/api/v2/viz/cb63142a-d843-11e3-b500-0e10bcd91c2b/viz.json';
-	      map = new L.Map('cartodb-map', { center: [0,0], zoom: 2 });
-	      cartodb.createLayer(map, layerUrl)
-						   .addTo(map)
-						   .on('done', function(layer) {
-						    }).on('error', function() {
-						    });
+	    	var layerUrl = 'http://jorgepazj.cartodb.com/api/v2/viz/683601fa-d843-11e3-b620-0e73339ffa50/viz.json';
 
-	      L.tileLayer('https://cartocdn_{s}.global.ssl.fastly.net/base-antique/{z}/{x}/{y}.png', {
-			attribution: 'EcoHack'
-		  }).addTo(map);
+      window.viz =  cartodb.createVis('cartodb-map', layerUrl);
 
 	    }
 
