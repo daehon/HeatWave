@@ -218,7 +218,6 @@
             removeClass (document.querySelector('#faq'), 'active');
           }
 
-
           if ( hasClass(document.querySelector('#position'), 'active') ) { 
            removeClass (document.querySelector('#position'), 'active'); 
           } 
@@ -242,14 +241,34 @@
         document.querySelector('#city-population').innerHTML = cities[id]['population'];
 
         document.querySelector("#value01").children[0].innerHTML = temperatures[0];
-        document.querySelector("#value02").children[0].innerHTML = temperatures[1];
-        document.querySelector("#value03").children[0].innerHTML = temperatures[2];
-        document.querySelector("#value04").children[0].innerHTML = temperatures[3];
-        document.querySelector("#value05").children[0].innerHTML = temperatures[4];
-        document.querySelector("#value06").children[0].innerHTML = temperatures[5];
-        document.querySelector("#value07").children[0].innerHTML = temperatures[6];
+        addClass(document.querySelector("#value01"),getColor(temperatures[0]));
+        addClass(document.querySelector("#value01"),'h-valign');
 
-           addClass (document.querySelector('#inn-info'), 'bounceInUp');
+        document.querySelector("#value02").children[0].innerHTML = temperatures[1];
+        addClass(document.querySelector("#value02"),getColor(temperatures[1]));
+        addClass(document.querySelector("#value02"),'h-valign');
+        
+        document.querySelector("#value03").children[0].innerHTML = temperatures[2];
+        addClass(document.querySelector("#value03"),getColor(temperatures[2]));
+        addClass(document.querySelector("#value03"),'h-valign');
+        
+        document.querySelector("#value04").children[0].innerHTML = temperatures[3];
+        addClass(document.querySelector("#value04"),getColor(temperatures[3]));
+        addClass(document.querySelector("#value04"),'h-valign');
+        
+        document.querySelector("#value05").children[0].innerHTML = temperatures[4];
+        addClass(document.querySelector("#value05"),getColor(temperatures[4]));
+        addClass(document.querySelector("#value05"),'h-valign');
+        
+        document.querySelector("#value06").children[0].innerHTML = temperatures[5];
+        addClass(document.querySelector("#value06"),getColor(temperatures[5]));
+        addClass(document.querySelector("#value06"),'h-valign');
+
+        document.querySelector("#value07").children[0].innerHTML = temperatures[6];
+        addClass(document.querySelector("#value07"),getColor(temperatures[6]));
+        addClass(document.querySelector("#value07"),'h-valign');
+
+        addClass (document.querySelector('#inn-info'), 'bounceInUp');
       }
 
       $btnAction.addEventListener("click", function(event) {
