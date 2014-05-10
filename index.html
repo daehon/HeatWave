@@ -1,15 +1,22 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Heatwave</title>
-		<link href="css/heatweb.css" rel="stylesheet" />
-		<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-  		<script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
-	</head>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Heatwave</title>
+    <link href="css/heatweb.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+      <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
 
-	<body>
+      <style type="text/css">
+        div.cartodb-zoom { float: right; margin-right: 20px; }
+        div.cartodb-timeslider { right: 20px !important; left: auto !important; }
+
+
+      </style>
+  </head>
+
+  <body>
     <nav class="navigation">
       <h1 class="brand"><a href="#">HeatWave</a></h1>
       <ul class="nav">
@@ -47,27 +54,61 @@
     </div>
 
     <div class="inner-faqs animated" id="inn-faq">
-      hola
+        <ul>
+          <li>
+            <h2>Stay hydrated</h2>
+            <p>Drink two to three litres of water per day, even if you don't feel thirsty!!! Avoid 'fizzy', alcoholic and caffeinated drinks and do not take salt tablets (unless instructed to by a doctor).</p>
+          </li>
+          <li>
+            <h2>Wear light clothing</h2>
+            <p>Dress Summer clothes. Light coloured clothing reflects heat and sunlight and helps your body maintain a normal temperature.</p>
+          </li>
+          <li>
+            <h2>Check on those at risk</h2>
+            <p>Visit at risk individuals such as the sick and elderly, at least twice a day and keep an eye on children. Watch for signs of heat-related illness.</p>
+          </li>
+          <li>
+            <h2>Minimise sun exposure</h2>
+            <p>Keep out of the sun as much as possible. If you must be in the sun, wear hat and sunglasses. Also make sure you wear sunscreen to prevent sunburn, which limits the body's ability to cope with heat.</p>
+          </li>
+          <li>
+            <h2>Prepare your home</h2>
+            <p>Prepare your home early. Service or replace your air conditioner before you need it. Curtains, awnings and blinds can also help to keep the home cool.</p>
+          </li>
+          <li>
+            <h2>Make use of air conditioning</h2>
+            <p>If you don't have air conditioning, make use of public facilities such as shopping centres, art galleries, cinemas or other air conditioned buildings. Portable fans are also useful in drawing in cool air, or exhausting warm air from a room.</p>
+          </li>
+          <li>
+            <h2>Remember your pets</h2>
+            <p>Pets can be particularly vulnerable to the heat. Make sure they have shade and plenty of cool water to last the day.</p>
+          </li>
+          <li>
+            <h2>Seek medical advice if necessary</h2>
+            <p>If you or your know people don't feel good, don't hesitate to contact your local health services.</p>
+          </li>  
+        </ul>       
+
     </div>
 
 
     <div class="inner-info animated" id="inn-info">
-
+      <p class="h-pa btn btn-close" id="close-info-search" style="right: 20px;"><a href="#" class="close" id="close-lgt-search">cerrar</a></p>
     </div>
 
     <script>  
-		  var form = document.getElementById("form-search");
-		  var map;
+      var form = document.getElementById("form-search");
+      var map;
       var $btnAction = document.querySelector('#btn-action');
       var $cityInput = document.querySelector('#form-txt');
 
-		 	function addClass(node, classAdd){
-		      node.className += ' ' + classAdd;
-		    } 
+      function addClass(node, classAdd){
+          node.className += ' ' + classAdd;
+        } 
 
-		    function removeClass(node, classRemove){
-		      node.className = node.className.replace(classRemove,"");
-		    }
+        function removeClass(node, classRemove){
+          node.className = node.className.replace(classRemove,"");
+        }
 
         function hasClass(node, klass){
           var classList = node.className;
@@ -79,18 +120,20 @@
         }
 
 
-		  form.addEventListener("focus", function( event ) {
-		    document.querySelector("#btn-action").style.opacity="1";    
-		    document.querySelector("#form-txt").value="";    
-		  }, true);
-		  form.addEventListener("blur", function( event ) {
-		    document.querySelector("#btn-action").style.opacity=".2";
-		    document.querySelector("#form-txt").value="City";    
-		  }, true);
+      form.addEventListener("focus", function( event ) {
+        document.querySelector("#btn-action").style.opacity="1";    
+        document.querySelector("#form-txt").value="";    
+      }, true);
+      form.addEventListener("blur", function( event ) {
+        document.querySelector("#btn-action").style.opacity=".2";
+        document.querySelector("#form-txt").value="City";    
+      }, true);
 
-		  document.querySelector('#position').addEventListener("click", function( event ) {
+      document.querySelector('#position').addEventListener("click", function( event ) {
           if ( !hasClass(document.querySelector('#light-search'), 'bounceInDown') ) { 
-           addClass (document.querySelector('#light-search'), 'bounceInDown');
+           addClass (document.querySelector('#light-search'), 'bounceInDown'); 
+          } else {
+            removeClass (document.querySelector('#light-search'), 'bounceInDown');
           }
           if ( hasClass(document.querySelector('#inn-faq'), 'bounceInRight') ) { 
            removeClass (document.querySelector('#inn-faq'), 'bounceInRight');
@@ -99,6 +142,7 @@
           setTimeout(function(){$cityInput.focus();}, 1250);
 		  }, true);
 		
+
       document.querySelector('#close-light-search').addEventListener("click", function( event ) {
         removeClass(document.querySelector('#light-search'), 'bounceInDown');
       }, true);
@@ -106,6 +150,8 @@
       document.querySelector('#faq').addEventListener("click", function( event ) {
           if ( !hasClass(document.querySelector('#inn-faq'), 'bounceInRight') ) { 
            addClass (document.querySelector('#inn-faq'), 'bounceInRight');
+          } else {
+           removeClass (document.querySelector('#inn-faq'), 'bounceInRight');
           }
 
           if ( hasClass(document.querySelector('#light-search'), 'bounceInDown') ) { 
@@ -136,16 +182,16 @@
       }, false);
 
 
-	    function initMap() {
-	    	var layerUrl = 'http://jorgepazj.cartodb.com/api/v2/viz/683601fa-d843-11e3-b620-0e73339ffa50/viz.json';
+      function initMap() {
+        var layerUrl = 'http://jorgepazj.cartodb.com/api/v2/viz/683601fa-d843-11e3-b620-0e73339ffa50/viz.json';
 
-      window.viz =  cartodb.createVis('cartodb-map', layerUrl);
+        window.viz =  cartodb.createVis('cartodb-map', layerUrl);
 
-	    }
+      }
 
-	    document.addEventListener('DOMContentLoaded', function () {
-	    	initMap();
-	    });
+      document.addEventListener('DOMContentLoaded', function () {
+        initMap();
+      });
     </script>
     <script src="js/datalist.js"></script>
     <script src="js/temperatures.js"></script>

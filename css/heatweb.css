@@ -290,7 +290,6 @@ body {
 	}
 
 .tooltip {
-	z-index: 10;
 	font: bold 12px Arial, Helvetica;
 	color: #fff;
 	width: 180px;
@@ -298,8 +297,9 @@ body {
 	background: rgba(0, 0, 0, .8);
 	padding: 20px;
 	top: 20%;
-	right: -100%;
+	right: -70%;
 	opacity: 0;
+	z-index: 20;
 	 -webkit-transition:opacity .3s;
 	    transition:opacity .3s;
 }
@@ -375,6 +375,7 @@ body {
 		left: 196px;
 		position: fixed;
 		opacity: 0;
+		z-index: 10;
 	}
 
 
@@ -388,8 +389,30 @@ body {
 		padding: 24px;
 		box-shadow: -10px 0 30px rgba(0, 0, 0, .2);
 		opacity: 0;
+		z-index: 10;
 	}
 
+.inner-faqs {
+	padding: 32px;
+}
+.inner-faqs ul {
+	height: 300px;
+	overflow: auto;
+}
+.inner-faqs li {
+	font-family: 'Arial';
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px dotted #ccc;
+
+}
+.inner-faqs li h2 {
+	font-size: 14px;
+}
+.inner-faqs li p {
+	font-size: 12px;
+	color:#888;
+}
 
 .bounceInUp {
   -webkit-animation-name: bounceInUp;
