@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 
 <html>
-
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Heatwave</title>
@@ -11,43 +10,42 @@
 	</head>
 
 	<body>
+    <nav class="navigation">
+      <h1 class="brand"><a href="#">HeatWave</a></h1>
+      <ul class="nav">
+        <li class="h-pr tooltip-inner">
+          <div class="tooltip h-pa">
+            <p>Do you want choose any city?</p>
+          </div>
+          <div class="btn">
+            <a href="#" class="btn-large location" id="position">Position</a>
+          </div>
+        </li>
+        <li class="h-pr tooltip-inner">
+          <div class="tooltip h-pa">
+            <p>Do you want know the most importants advices?</p>
+          </div>
+          <div class="btn">
+            <a href="#" class="btn-large faq">FAQs</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
 
-		<nav class="navigation">
-			<h1 class="brand"><a href="#">HeatWave</a></h1>
-			<ul class="nav">
-				<li class="h-pr tooltip-inner">
-					<div class="tooltip h-pa">
-						<p>Do you want choose any city?</p>
-					</div>
-					<div class="btn">
-						<a href="#" class="btn-large location" id="position">Position</a>
-					</div>
-				</li>
-				<li class="h-pr tooltip-inner">
-					<div class="tooltip h-pa">
-						<p>Do you want know the most importants advices?</p>
-					</div>
-					<div class="btn">
-						<a href="#" class="btn-large faq">FAQs</a>
-					</div>
-				</li>
-			</ul>
-		</nav>
+    <div id="cartodb-map" class="map h-pa"></div>
 
-		<div id="cartodb-map" class="map h-pa"></div>
+    <div class="light light-search h-pa animated" id="light-search">
+      <p class="h-pa btn btn-close"><a href="#" class="close" id="close-lgt-search">cerrar</a></p>
+      <h2 class="lgt-title h-tcenter">Choose a city</h2>
+      <form class="frm-search" id="form-search">
+        <input id="form-txt" type="text" value="City" class="frm-search-txt h-iblock" />
+        <button class="btn" id="btn-action">
+          <span class="btn-large search">hola</span>
+        </button>
+      </form>
+    </div>
 
-
-		<div class="light light-search h-pa animated" id="light-search">
-			<h2 class="lgt-title h-tcenter">Choose a city</h2>
-			<form class="frm-search" id="form-search">
-				<input id="form-txt" type="text" value="City" class="frm-search-txt h-iblock" />
-				<button class="btn" id="btn-action">
-					<span class="btn-large search">hola</span>
-				</button>
-			</form>
-		</div>
-
-		<script>	
+    <script>  
 		  var form = document.getElementById("form-search");
 		  var map;
 
@@ -90,10 +88,8 @@
 	    document.addEventListener('DOMContentLoaded', function () {
 	    	initMap();
 	    });
+    </script>
 
-		</script>
-
-
-	</body>
+  </body>
 
 </html>
