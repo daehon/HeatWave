@@ -338,6 +338,8 @@ body {
 	border: 1px solid rgba(58, 64, 71, .5);
 	border-radius: 4px;
 	padding: 12px;
+	width: auto;
+	overflow: hidden;
 }
 	.frm-search button {
 		border: 0;
@@ -351,6 +353,8 @@ body {
 		 -webkit-transition:opacity .3s;
 	    transition:opacity .3s;
 	    cursor: pointer;
+	    float:right;
+	    display: inline;
 	}
 	.frm-search button span { 
 		display: block;
@@ -358,13 +362,14 @@ body {
 	.frm-search-txt {
 		border: 0;
 		font: 16px 'Helvetica'; color: #999;
-		width: 85%;
+		width: 77%;
 		background: none;
 		padding: 7px;
 		opacity: .2;
 		 -webkit-transition:opacity .3s;
 	    transition:opacity .3s;
 	    vertical-align: middle;
+	    float:left; display: inline;
 	}
 	.frm-search-txt:focus { outline: none; opacity: 1; }
 
@@ -387,7 +392,7 @@ body {
 		bottom: 0;
 		left: 196px;
 		position: fixed;
-		height:225px;
+		height:120px;
 		padding: 24px;
 		box-shadow: -10px 0 30px rgba(0, 0, 0, .2);
 		opacity: 0;
@@ -418,14 +423,30 @@ body {
 	color:#999;
 }
 
-
+.lst-temperatures {
+	width: 600px; 
+	margin-left: 20px;
+}
 .lst-temperatures > li {
-	color: #fff;
-	font: 20px 'Arial' ;
-	background: #f5f5f5;
+	color: #fff;
+	font: bold 18px 'Arial';
 	border-radius: 50%;
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	margin-left
 }
 
+.info-population p {
+	font: 12px Arial;
+	color: #666;
+	margin-bottom: 8px;
+}
+.info-population h2 {
+	font: bold 20px 'Arial';
+color: #333;
+}
 
 
 .danger {
