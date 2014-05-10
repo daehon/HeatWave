@@ -38,7 +38,8 @@
       <p class="h-pa btn btn-close" id="close-light-search"><a href="#" class="close" id="close-lgt-search">cerrar</a></p>
       <h2 class="lgt-title h-tcenter">Choose a city</h2>
       <form class="frm-search" id="form-search">
-        <input id="form-txt" type="text" value="City" class="frm-search-txt h-iblock" />
+        <input id="form-txt" type="text" value="City" list="cities-datalist" class="frm-search-txt h-iblock" />
+        <datalist id="cities-datalist"></datalist>
         <button class="btn" id="btn-action">
           <span class="btn-large search">hola</span>
         </button>
@@ -114,6 +115,7 @@
 	    	initMap();
 	    });
     </script>
+    <script src="js/datalist.js"></script>
 
   </body>
 
