@@ -213,11 +213,15 @@
 
       function CitySelected(id) {
            removeClass (document.querySelector('#light-search'), 'bounceInDown');
-           addClass (document.querySelector('#inn-info'), 'bounceInUp');
 
            var city = cities[id]['internalname'];
            window.viz.map.setCenter({lat: cities[id]['lat'], lon: cities[id]['lon']});
-           getTemperature(city);
+           //TODO
+           temperatures = getTemperature(city);
+           console.log("Temperatures: " + temperatures);
+           population = cities[id]['population'];
+           console.log("Population: " + population);
+           addClass (document.querySelector('#inn-info'), 'bounceInUp');
       };
 
       $btnAction.addEventListener("click", function(event) {

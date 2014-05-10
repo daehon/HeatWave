@@ -7,8 +7,13 @@ function getTemperature(id) {
       if (temperatureRequest.status === 200) {
         var jsonOptions = JSON.parse(temperatureRequest.responseText);
 
-        temperatures = jsonOptions['rows'];
+        items = jsonOptions['rows'];
+        temperatures = Array();
+        items.forEach(function(temp) {
+          temperatures += temp['temperature'];
+        });
         console.log(temperatures);
+        //TODO
       } else {
         // An error occured :(
         console.log("ERROR retrieving temperature for " + id);
