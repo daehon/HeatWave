@@ -178,7 +178,7 @@ ul { list-style-type: none;}
 
 /* apply a natural box layout model to all elements
 (if supporting <IE8, use a pollyfill: https://github.com/Schepp/box-sizing-polyfill ) */
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.navigation { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 body {
   height: 100%;
@@ -329,6 +329,7 @@ body {
 	left: 30%;
 	top: 30%;
 	opacity: 0;
+	pointer-events:none;
 }
 
 .lgt-title { margin-bottom: 32px; font: 18px 'Helvetica'; color: #394047; }
